@@ -1,5 +1,6 @@
 import React from "react";
 import "./Login.css";
+import {Link} from 'react-router-dom'
 
 function Login() {
   return (
@@ -17,13 +18,17 @@ function Login() {
         </p>
       </div>
 
-      <div className="login__button">
-          <button><p>AGREE AND CONTINUE</p></button>
-      </div>
+      <Link style={{textDecoration:'none'}} to="/chat">
+        <div className="login__button">
+          <button>
+            <p>AGREE AND CONTINUE</p>
+          </button>
+        </div>
+      </Link>
 
       <div className="login__credit">
-          <p>from</p>
-          <h4>ARUN DHAS</h4>
+        <p>from</p>
+        <h4>ARUN DHAS</h4>
       </div>
     </div>
   );

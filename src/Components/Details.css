@@ -1,0 +1,29 @@
+.details{
+    display: flex;
+    background-color: #075E54;
+    border: 1px solid #075E54;
+    color: rgb(216, 241, 229);
+    padding-bottom: 4px;
+}
+
+.details__names{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-left: 10px;
+}
+
+.details__camera{
+    margin-left: 10px;
+    padding-left: 5px;
+}
+
+.details__names >h3{
+    font-size: 16px;
+    padding-bottom: 9px;
+}
+
+
+

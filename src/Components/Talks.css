@@ -1,0 +1,45 @@
+.talks{
+    display: flex;
+    padding-left: 16px;
+    margin-top: 20px;
+    /* min-width: 100%; */
+    max-width: 100%;
+    padding-right: 10px;
+    padding-bottom: 21px;
+    border-bottom: 1px solid rgb(224, 221, 221);
+}
+
+.talks__avatar{
+    flex: 0.2;
+    padding-top: 5px;
+}
+
+.talks__avatar >
+
+.talks__time{
+    flex: 0.2;
+}
+
+.talks__num{
+    flex: 0.8;
+}
+
+.talks__num >span {
+    padding-top: 10px;
+    color: gray
+}
+
+.talks__num >p{
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.time{
+ color: gray;
+}
+
+.line{
+    height: 30px;
+    background-color: green;
+}

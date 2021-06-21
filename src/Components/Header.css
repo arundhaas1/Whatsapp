@@ -1,0 +1,37 @@
+.header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #075E54;
+    height: 60px;
+    padding-bottom: 4px;
+    padding-top: 3px;
+}
+
+.header__title{
+    color: rgb(216, 241, 229);
+    margin-left: 14px;
+    font-weight: lighter;
+}
+
+.header__icons{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon1 , .icon2{
+    padding-right: 10px;
+    color: white;
+}
+
+.icon2{
+    padding-right: 12px;
+}
+
+.details__underline{
+    border-bottom: 4px solid rgb(255, 255, 255);
+    border-radius: 3px;
+    margin-top: -5px;
+
+}
