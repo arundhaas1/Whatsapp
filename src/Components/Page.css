@@ -1,0 +1,30 @@
+
+.page{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 8px;
+    background-color: #075E54;
+    color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+
+.page__left{
+    align-items: center;
+    display: flex;
+    gap: 14px;
+    
+}
+
+.page__left >h3{
+    color: #fff;
+}
+
+.page__right{
+    display: flex;
+    gap: 30px;
+}

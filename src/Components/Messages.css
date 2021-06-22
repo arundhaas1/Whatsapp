@@ -1,0 +1,36 @@
+.messages__footer{
+    display: flex;
+    width: 100%;
+    /* height: 100vh; */
+    align-items: flex-end;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.input__left >input{
+    width: 270px;
+    padding-top: 15px;
+    font-size: 20px;
+    align-items: center;
+    border: none;
+    outline-width: 0;
+    margin-left: 10px;
+    vertical-align: center;
+}
+
+.input__left{
+    background-color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 40px;
+    margin-right: 7px;
+    margin-left: 5px;
+    padding: 8px 0px;
+}
+
+.input__right{
+    flex: 0.1;
+    margin-bottom: 9px;
+}
