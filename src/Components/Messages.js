@@ -1,44 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Messages.css";
 import Message from "./Message";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import CameraAltIcon from "@material-ui/icons/CameraAlt";
-import MicIcon from "@material-ui/icons/Mic";
+// import MicIcon from "@material-ui/icons/Mic";
+import SendIcon from "@material-ui/icons/Send";
 
 function Messages() {
+  const [input, setInput] = useState("");
+  const [message, setMessage] = useState("");
+
+  const sendIt= (e) => {
+    e.preventDefault();
+    setMessage(input);
+  };
+
   return (
     <div className="messages">
       <div>
-        <Message />
+        <Message message={message} />
       </div>
 
-      <div className="messages__footer">
+      <form className="messages__footer">
         <div className="input__left">
           <InsertEmoticonIcon
-          className="emoji"
+            className="emoji"
             fontSize="medium"
-            style={{ fontSize: 30, color: "gray"}}
+            style={{ fontSize: 30, color: "gray" }}
           />
-          <input type="text" />
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          />
           <CameraAltIcon
-          className="camera"
+            className="camera"
             fontSize="medium"
             style={{ fontSize: 30, color: "gray" }}
           />
         </div>
         <div className="input__right">
-          <MicIcon
+          <SendIcon
+            type="submit"
+            onClick={sendIt}
             fontSize="large"
             style={{
+              type: "submit",
               background: "#075E54",
               borderRadius: "999px",
-              padding: "4px",
+              padding: "4px 4px",
+              paddingLeft: "5px",
               color: "white",
-              marginBottom: "6px",
+              marginBottom: "5px",
             }}
           />
         </div>
-      </div>
+      </form>
     </div>
   );
 }
