@@ -10,9 +10,10 @@
 }
 
 .input__left >input{
-    width: 270px;
+    width: 63vw;
     padding-top: 15px;
     font-size: 20px;
+    display: flex;
     align-items: center;
     border: none;
     outline-width: 0;
@@ -21,6 +22,8 @@
 }
 
 .input__left{
+    display: flex;
+    width: 90vw;
     background-color: #fff;
     margin-bottom: 10px;
     border: 1px solid rgb(255, 255, 255);
@@ -33,4 +36,17 @@
 .input__right{
     flex: 0.1;
     margin-bottom: 9px;
+}
+
+.emoji{
+  margin-left: 10px;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.camera{
+    margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
 }

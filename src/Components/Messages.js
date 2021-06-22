@@ -15,13 +15,15 @@ function Messages() {
       <div className="messages__footer">
         <div className="input__left">
           <InsertEmoticonIcon
+          className="emoji"
             fontSize="medium"
-            style={{ fontSize: 30, color: "gray", paddingLeft: "5px" }}
+            style={{ fontSize: 30, color: "gray"}}
           />
           <input type="text" />
           <CameraAltIcon
+          className="camera"
             fontSize="medium"
-            style={{ fontSize: 30, color: "gray", paddingRight: "7px" }}
+            style={{ fontSize: 30, color: "gray" }}
           />
         </div>
         <div className="input__right">
@@ -37,7 +39,6 @@ function Messages() {
           />
         </div>
       </div>
-
     </div>
   );
 }
