@@ -1,24 +1,50 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Messages.css";
+import firebase from "firebase";
+import db from '../Firebase.js'
 import Message from "./Message";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import CameraAltIcon from "@material-ui/icons/CameraAlt";
 // import MicIcon from "@material-ui/icons/Mic";
+import {useDataLayerValue} from '../datalayer'
 import SendIcon from "@material-ui/icons/Send";
+import FlipMove from 'react-flip-move';
 
 function Messages() {
-  const [input, setInput] = useState("");
-  const [message, setMessage] = useState("");
 
-  const sendIt= (e) => {
-    e.preventDefault();
-    setMessage(input);
-  };
+  const[{user},dispatch]=useDataLayerValue()
+  const [input, setInput] = useState("");
+  const [messages, setMessages] = useState([]);
+
+  useEffect (()=>{
+    db.collection('messenger').orderBy('timestamp','desc').onSnapshot(snapshot=>{
+        setMessages(snapshot.docs.map(doc=>({id :doc.id ,message :doc.data()})))
+    })
+},[])
+
+const sendIt=(e)=>{
+  e.preventDefault();
+  db.collection("Whatsapp").add({
+      message : input,
+      username : user.displayName,
+      timestamp:firebase.firestore.FieldValue.serverTimestamp()
+  })
+  setInput("")
+
+  }
+console.log('msg is', messages.message)
 
   return (
     <div className="messages">
       <div>
-        <Message message={message} />
+            {
+                messages.map(({message,id}) => {
+                    console.log("message is",message)
+                    return(
+                        <Message key={id} message={message}/>
+                    )
+                })
+            }
       </div>
 
       <form className="messages__footer">
@@ -57,7 +83,6 @@ function Messages() {
         </div>
       </form>
     </div>
-  );
+  )
 }
-
 export default Messages;
