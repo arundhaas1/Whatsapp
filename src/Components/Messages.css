@@ -51,3 +51,39 @@
     margin-bottom: auto;
     margin-left: auto;
 }
+.message{
+
+    /* height: 100vh; */
+    /* margin-top: 60px; */
+    overflow-y: overlay;
+}
+
+
+.text{
+    /* margin-top: 67px; */
+    margin-top: 10px;
+    margin-left: 10px;
+    width: fit-content;
+    background-color: rgb(204, 203, 203);
+}
+
+.text__mess1{
+    font-size: 10px;
+    color: gray;
+}
+
+.text__mess2{
+
+    margin-top: 8px;
+    font-weight: bold;
+    margin-bottom: -20px;
+    color: #111;
+}
+
+.guest{
+    background-color:  rgba(161, 214, 75, 0.7) !important;
+    margin-left: auto;
+    margin-top: 10px;
+    width: fit-content;
+    margin-right: 10px;
+}

@@ -28,14 +28,14 @@ const sendIt=(e)=>{
   e.preventDefault();
   db.collection("Whatsapp").add({
       message : input,
-      // username : user.displayName,
       username:user.displayName,
       timestamp:firebase.firestore.FieldValue.serverTimestamp()
   })
   setInput("")
 
   }
-// console.log('msg is', messages)
+// console.log('name1 is',user.displayName)
+
 
 
   return (
@@ -44,14 +44,15 @@ const sendIt=(e)=>{
             {
                 messages.map(text => {
                     console.log("text is",text)
+                    const isUser= text.message.username===user?.displayName
                     return(
-
+                      // console.log('name2 is' ,text.message.username ),
                       <div className="message">
-                      {text ? (<Card className="text">
+                      {text ? (<Card className={!isUser ? "text" : "guest"} >
                         <CardContent>
-                          {/* /// */}
-                          <Typography  >
-                          <p>{text.message.username}:{text.message.message}</p>
+                          <Typography>
+                          <p className="text__mess1">{text.message?.username}</p>
+                          <p className="text__mess2">{text.message.message}</p>
 
                           </Typography>
                         </CardContent>
@@ -72,6 +73,7 @@ const sendIt=(e)=>{
           />
           <input
             type="text"
+            placeholder="Type a message"
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
@@ -83,11 +85,10 @@ const sendIt=(e)=>{
         </div>
         <div className="input__right">
           <SendIcon
-            type="submit"
             onClick={sendIt}
             fontSize="large"
+            type="submit"
             style={{
-              type: "submit",
               background: "#075E54",
               borderRadius: "999px",
               padding: "4px 4px",

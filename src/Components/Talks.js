@@ -10,7 +10,7 @@ function Talks() {
       </div>
       <div className="talks__num">
         <p>Arun Dhas</p>
-        <span>Hi Man</span>
+        <span>Welcome🔥</span>
       </div>
       <div className="talks__time">
         <p className="time">19.14</p>
