@@ -29,12 +29,14 @@ const sendIt=(e)=>{
   db.collection("Whatsapp").add({
       message : input,
       // username : user.displayName,
+      username:user.displayName,
       timestamp:firebase.firestore.FieldValue.serverTimestamp()
   })
   setInput("")
 
   }
-console.log('msg is', messages)
+// console.log('msg is', messages)
+
 
   return (
     <div className="messages">
@@ -47,8 +49,9 @@ console.log('msg is', messages)
                       <div className="message">
                       {text ? (<Card className="text">
                         <CardContent>
-                          <Typography color="initial">
-                          <p>{text.message.message}</p>
+                          {/* /// */}
+                          <Typography  >
+                          <p>{text.message.username}:{text.message.message}</p>
 
                           </Typography>
                         </CardContent>
