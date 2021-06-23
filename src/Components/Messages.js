@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./Messages.css";
 import firebase from "firebase";
+import "./Message.css";
+import { CardContent, Card, Typography } from "@material-ui/core";
 import db from '../Firebase.js'
 import Message from "./Message";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
@@ -8,7 +10,7 @@ import CameraAltIcon from "@material-ui/icons/CameraAlt";
 // import MicIcon from "@material-ui/icons/Mic";
 import {useDataLayerValue} from '../datalayer'
 import SendIcon from "@material-ui/icons/Send";
-import FlipMove from 'react-flip-move';
+// import FlipMove from 'react-flip-move';
 
 function Messages() {
 
@@ -17,7 +19,7 @@ function Messages() {
   const [messages, setMessages] = useState([]);
 
   useEffect (()=>{
-    db.collection('messenger').orderBy('timestamp','desc').onSnapshot(snapshot=>{
+    db.collection('Whatsapp').orderBy('timestamp','desc').onSnapshot(snapshot=>{
         setMessages(snapshot.docs.map(doc=>({id :doc.id ,message :doc.data()})))
     })
 },[])
@@ -26,22 +28,33 @@ const sendIt=(e)=>{
   e.preventDefault();
   db.collection("Whatsapp").add({
       message : input,
-      username : user.displayName,
+      // username : user.displayName,
       timestamp:firebase.firestore.FieldValue.serverTimestamp()
   })
   setInput("")
 
   }
-console.log('msg is', messages.message)
+console.log('msg is', messages)
 
   return (
     <div className="messages">
       <div>
             {
-                messages.map(({message,id}) => {
-                    console.log("message is",message)
+                messages.map(text => {
+                    console.log("text is",text)
                     return(
-                        <Message key={id} message={message}/>
+
+                      <div className="message">
+                      {text ? (<Card className="text">
+                        <CardContent>
+                          <Typography color="initial">
+                          <p>{text.message.message}</p>
+
+                          </Typography>
+                        </CardContent>
+                      </Card>) : null}
+                
+                    </div>
                     )
                 })
             }
