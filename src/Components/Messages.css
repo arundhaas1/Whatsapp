@@ -87,3 +87,10 @@
     width: fit-content;
     margin-right: 10px;
 }
+
+@media (max-width:768px){
+    .input__left {
+        /* border: 1px solid green; */
+        width: 84vw;
+    }
+}

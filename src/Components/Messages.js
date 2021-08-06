@@ -4,14 +4,11 @@ import firebase from "firebase";
 import "./Message.css";
 import { CardContent, Card, Typography } from "@material-ui/core";
 import db from '../Firebase.js'
-import Message from "./Message";
-import { IconButton } from '@material-ui/core';
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import CameraAltIcon from "@material-ui/icons/CameraAlt";
-// import MicIcon from "@material-ui/icons/Mic";
 import {useDataLayerValue} from '../datalayer'
 import SendIcon from "@material-ui/icons/Send";
-// import FlipMove from 'react-flip-move';
+
 
 function Messages() {
 
@@ -90,7 +87,6 @@ const onEnter=(e)=>{
           />
         </div>
         <div className="input__right">
-        <IconButton  disabled={!input}>
           <SendIcon
             onClick={sendIt}
             fontSize="large"
@@ -103,7 +99,6 @@ const onEnter=(e)=>{
               marginBottom: "5px",
             }}
           />
-          </IconButton>
         </div>
       </div>
     </div>
