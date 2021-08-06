@@ -90,7 +90,13 @@
 
 @media (max-width:768px){
     .input__left {
-        /* border: 1px solid green; */
+        border: 1px solid green;
         width: 84vw;
     }
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
 }

@@ -8,6 +8,7 @@ import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import CameraAltIcon from "@material-ui/icons/CameraAlt";
 import {useDataLayerValue} from '../datalayer'
 import SendIcon from "@material-ui/icons/Send";
+import { IconButton } from '@material-ui/core';
 
 
 function Messages() {
@@ -87,9 +88,11 @@ const onEnter=(e)=>{
           />
         </div>
         <div className="input__right">
+        <IconButton className="buttons" disabled={!input}>
           <SendIcon
             onClick={sendIt}
             fontSize="large"
+            
             style={{
               background: "#075E54",
               borderRadius: "999px",
@@ -99,6 +102,7 @@ const onEnter=(e)=>{
               marginBottom: "5px",
             }}
           />
+          </IconButton>
         </div>
       </div>
     </div>
