@@ -26,7 +26,7 @@ function Messages() {
 },[])
 
 const sendIt=(e)=>{
-  e.preventDefault();
+  // e.preventDefault();
   db.collection("Whatsapp").add({
       message : input,
       username:user.displayName,
@@ -37,7 +37,11 @@ const sendIt=(e)=>{
   }
 // console.log('name1 is',user.displayName)
 
-
+const onEnter=(e)=>{
+  if (e.keyCode===13) {
+    sendIt();
+  }
+}
 
   return (
     <div className="messages">
@@ -65,7 +69,7 @@ const sendIt=(e)=>{
             }
       </div>
 
-      <form className="messages__footer">
+      <div className="messages__footer">
         <div className="input__left">
           <InsertEmoticonIcon
             className="emoji"
@@ -74,6 +78,7 @@ const sendIt=(e)=>{
           />
           <input
             type="text"
+            onKeyDown={onEnter}
             placeholder="Type a message"
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -85,11 +90,10 @@ const sendIt=(e)=>{
           />
         </div>
         <div className="input__right">
-        <IconButton className="icona" variant="contained" disabled={!input} color="primary" type="submit">
+        <IconButton  disabled={!input}>
           <SendIcon
             onClick={sendIt}
             fontSize="large"
-            type="submit"
             style={{
               background: "#075E54",
               borderRadius: "999px",
@@ -101,7 +105,7 @@ const sendIt=(e)=>{
           />
           </IconButton>
         </div>
-      </form>
+      </div>
     </div>
   )
 }
