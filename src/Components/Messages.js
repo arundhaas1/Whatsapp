@@ -5,6 +5,7 @@ import "./Message.css";
 import { CardContent, Card, Typography } from "@material-ui/core";
 import db from '../Firebase.js'
 import Message from "./Message";
+import { IconButton } from '@material-ui/core';
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import CameraAltIcon from "@material-ui/icons/CameraAlt";
 // import MicIcon from "@material-ui/icons/Mic";
@@ -84,6 +85,7 @@ const sendIt=(e)=>{
           />
         </div>
         <div className="input__right">
+        <IconButton className="icona" variant="contained" disabled={!input} color="primary" type="submit">
           <SendIcon
             onClick={sendIt}
             fontSize="large"
@@ -97,6 +99,7 @@ const sendIt=(e)=>{
               marginBottom: "5px",
             }}
           />
+          </IconButton>
         </div>
       </form>
     </div>

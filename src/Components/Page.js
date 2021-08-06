@@ -19,7 +19,7 @@ function Page() {
             />
           </Link>
           <Avatar className="page__avatar" />
-          <h3>Arun Dhas 💙</h3>
+          <h3>Arun Dhas 💛</h3>
         </div>
 
         <div className="page__right">
