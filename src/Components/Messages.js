@@ -81,25 +81,26 @@ const onEnter=(e)=>{
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
-          <CameraAltIcon
+          {/* <CameraAltIcon
             className="camera"
             fontSize="medium"
             style={{ fontSize: 30, color: "gray" }}
-          />
+          /> */}
         </div>
         <div className="input__right">
         <IconButton className="buttons" disabled={!input}>
           <SendIcon
             onClick={sendIt}
             fontSize="large"
-            
+            className="send"
             style={{
               background: "#075E54",
               borderRadius: "999px",
               padding: "4px 4px",
               paddingLeft: "5px",
               color: "white",
-              marginBottom: "5px",
+              marginBottom: "0px",
+              marginRight:"10px"
             }}
           />
           </IconButton>
