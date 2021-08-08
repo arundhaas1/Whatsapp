@@ -26,11 +26,18 @@
 
 .page__right{
     display: flex;
-    gap: 30px;
+    gap: 20px;
 }
 
 .mess{
     margin-top: 60px;
     background-color: rgb(204, 203, 203);
     min-height: 100vh;
+}
+
+@media (max-width:768px){
+    .page__right{
+        display: flex;
+        gap: 12px;
+    }
 }

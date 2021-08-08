@@ -26,7 +26,7 @@ function Login() {
 
   return (
     <div className="login">
-     {user ? (<Chat />):(    <div className="login">
+     {!user ? (<Chat />):(    <div className="login">
       <div className="login__header">Welcome to Whatsapp</div>
 
       <div className="login__img">
